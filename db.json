@@ -1,0 +1,234 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Trà Sữa Truyền Thống"
+    },
+    {
+      "id": "2",
+      "name": "Trà Trái Cây Tươi"
+    },
+    {
+      "id": "3",
+      "name": "Đồ Uống Đá Xay"
+    },
+    {
+      "id": "4",
+      "name": "Trà Kem Muối / Cheese"
+    }
+  ],
+  "products": [
+    {
+      "name": "Trà Sữa truyền thống",
+      "price": 35000,
+      "category": "1",
+      "image": "/images/tra-sua.webp",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Trà Cam Sả Nhiệt Đới",
+      "price": 45000,
+      "image": "/images/tra-dao-cam-sa.jpg",
+      "categoryId": "2",
+      "description": "Hương vị thanh mát từ cam tươi và sả thơm nồng."
+    },
+    {
+      "id": "3",
+      "name": "Matcha Kem Muối",
+      "price": 50000,
+      "image": "/images/matcha-kem-muoi.jpg",
+      "categoryId": "4",
+      "description": "Matcha Nhật Bản kết hợp lớp kem mặn béo mịn."
+    },
+    {
+      "id": "4",
+      "name": "Sữa Tươi Trân Châu Đường Đen",
+      "price": 40000,
+      "image": "/images/sua-tuoi-tran-chau-duong-den.jpg",
+      "categoryId": "1",
+      "description": "Sữa tươi nguyên chất cùng trân châu nấu đường đen thủ công."
+    },
+    {
+      "id": "5",
+      "name": "Dâu Tây Đá Xay Kem Béo",
+      "price": 55000,
+      "image": "/images/tra-dau.webp",
+      "categoryId": "3",
+      "description": "Dâu tây tươi xay cùng đá và phủ lớp kem tươi bên trên."
+    },
+    {
+      "id": "6",
+      "name": "Trà Đào Hồng Hạc",
+      "price": 38000,
+      "image": "/images/tra-dao.webp",
+      "categoryId": "2",
+      "description": "Hương trà đào truyền thống kết hợp topping đào miếng giòn rụm."
+    },
+    {
+      "id": "7",
+      "name": "Trà Lài Sen Vàng",
+      "price": 45000,
+      "image": "/images/tra-lai.jpg",
+      "categoryId": "2",
+      "description": "Trà lài thanh khiết, hạt sen bùi béo và củ năng giòn."
+    },
+    {
+      "id": "8",
+      "name": "Oolong Tứ Quý Kem Cheese",
+      "price": 48000,
+      "image": "/images/tra-oolong-kem-cheese.jpg",
+      "categoryId": "4",
+      "description": "Vị trà oolong đậm đà phủ lớp kem phô mai béo ngậy."
+    },
+    {
+      "id": "24ac",
+      "name": "Trà kiwi",
+      "price": 25000,
+      "category": "2",
+      "image": "sccd"
+    }
+  ],
+  "users": [
+    {
+      "id": "admin",
+      "username": "admin",
+      "fullName": "Quản Trị Viên",
+      "email": "admin@sunktea.com",
+      "phone": "0888999888",
+      "password": "adminpassword",
+      "role": "admin"
+    },
+    {
+      "id": "1f61",
+      "username": "B",
+      "fullName": "Nguyễn Văn B",
+      "email": "b@gmail.con",
+      "phone": "12345678",
+      "password": "123abc",
+      "role": "user",
+      "status": "blocked"
+    },
+    {
+      "id": "c0fe",
+      "username": "bd",
+      "fullName": "Nguyễn Bờ Đê",
+      "email": "bode@gmail.com",
+      "phone": "123456789",
+      "password": "bd1234",
+      "role": "user"
+    },
+    {
+      "id": "d780",
+      "username": "chic",
+      "fullName": "Nguyễn Thị C",
+      "email": "c@gmail.com",
+      "phone": "123456789",
+      "password": "thic123",
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": "e699",
+      "userId": "1f61",
+      "fullname": "Nguyễn Văn B",
+      "phone": "12345678",
+      "email": "b@gmail.con",
+      "address": "111 đong bắc",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "name": "Trà Sữa Sunk Truyền Thống",
+          "quantity": 8,
+          "price": 35000
+        }
+      ],
+      "total": 295000,
+      "status": "Shipping",
+      "date": "2026-04-12T18:29:37.413Z"
+    },
+    {
+      "id": "20e9",
+      "userId": "admin",
+      "fullname": "A",
+      "phone": "123456789",
+      "email": "admin@sunktea.com",
+      "address": "abc",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "name": "Trà Cam Sả Nhiệt Đới",
+          "quantity": 1,
+          "price": 45000
+        }
+      ],
+      "total": 60000,
+      "status": "Chờ xác nhận",
+      "date": "2026-04-12T18:42:44.115Z"
+    },
+    {
+      "id": "4a4b",
+      "userId": "1f61",
+      "fullname": "Abc",
+      "phone": "123456",
+      "email": "b@gmail.con",
+      "address": "lalala",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "name": "Trà Cam Sả Nhiệt Đới",
+          "quantity": 4,
+          "price": 45000
+        }
+      ],
+      "total": 195000,
+      "status": "Cancelled",
+      "date": "2026-04-13T01:17:19.659Z"
+    },
+    {
+      "id": "c54f",
+      "userId": "d780",
+      "fullname": "Nguyễn Thị C",
+      "phone": "12345678",
+      "email": "c@gmail.com",
+      "address": "tô ký",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "name": "Trà Sữa truyền thống",
+          "quantity": 1,
+          "price": 35000
+        },
+        {
+          "name": "Trà Cam Sả Nhiệt Đới",
+          "quantity": 1,
+          "price": 45000
+        }
+      ],
+      "total": 95000,
+      "status": "Completed",
+      "date": "2026-04-13T01:51:18.449Z"
+    }
+  ],
+  "cart": [
+    {
+      "id": "f828",
+      "userId": "admin",
+      "productId": "1",
+      "name": "Trà Sữa Sunk Truyền Thống",
+      "price": 35000,
+      "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3",
+      "quantity": 6
+    },
+    {
+      "id": "e2b5",
+      "userId": "admin",
+      "productId": "2",
+      "name": "Trà Cam Sả Nhiệt Đới",
+      "price": 45000,
+      "image": "https://images.unsplash.com/photo-1582998314170-4e3a479262e3",
+      "quantity": 1
+    }
+  ]
+}
