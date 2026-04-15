@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation"; // Import thêm cái này
 import AddToCart from "@/components/AddToCart";
+export const dynamic = 'force-dynamic';
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
