@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   // Thay 'asm2' bằng tên repository chính xác của bạn trên GitHub
   basePath: '/asm2', 
   assetPrefix: '/asm2',
