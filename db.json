@@ -19,11 +19,13 @@
   ],
   "products": [
     {
+      "id": "1",
       "name": "Trà Sữa truyền thống",
       "price": 35000,
-      "category": "1",
       "image": "/images/tra-sua.webp",
-      "id": "1"
+      "categoryId": "1",
+      "description": "Hương vị trà sữa truyền thống đậm đà, kết hợp trân châu dai ngon."
+      
     },
     {
       "id": "2",

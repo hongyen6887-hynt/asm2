@@ -13,9 +13,9 @@ export default function AdminDashboard() {
   const fetchDashboardData = async () => {
     try {
       const [resP, resC, resO] = await Promise.all([
-        fetch("http://localhost:3001/products"),
-        fetch("http://localhost:3001/categories"),
-        fetch("http://localhost:3001/orders")
+        fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products"),
+        fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/categories"),
+        fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/orders")
       ]);
       
       const products = await resP.json();

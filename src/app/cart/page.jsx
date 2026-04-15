@@ -17,7 +17,7 @@ export default function CartPage() {
     const user = JSON.parse(userStr);
 
     try {
-      const res = await fetch(`http://localhost:3001/cart?userId=${user.id}`);
+      const res = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart?userId=${user.id}`);
       const data = await res.json();
       setCartItems(data);
     } catch (error) {
@@ -35,7 +35,7 @@ export default function CartPage() {
   const updateQuantity = async (id, newQuantity) => {
     if (newQuantity < 1) return;
     try {
-      await fetch(`http://localhost:3001/cart/${id}`, {
+      await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: newQuantity }),
@@ -51,7 +51,7 @@ export default function CartPage() {
   const removeItem = async (id) => {
     if (!confirm("Bạn muốn xóa món này khỏi giỏ hàng?")) return;
     try {
-      await fetch(`http://localhost:3001/cart/${id}`, { method: "DELETE" });
+      await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${id}`, { method: "DELETE" });
       setCartItems(cartItems.filter(item => item.id !== id));
     } catch (error) {
       alert("Lỗi khi xóa món");

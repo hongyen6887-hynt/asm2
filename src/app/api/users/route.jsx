@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const JSON_SERVER_URL = "http://localhost:3001/users";
+const JSON_SERVER_URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/users";
 
 // GET: Lấy danh sách thành viên
 export async function GET() {

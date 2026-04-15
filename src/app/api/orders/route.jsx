@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const JSON_SERVER_URL = "http://localhost:3001/orders";
+const JSON_SERVER_URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/orders";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

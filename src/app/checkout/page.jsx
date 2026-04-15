@@ -24,7 +24,7 @@ export default function CheckoutPage() {
     setFormData(prev => ({ ...prev, fullname: storedUser.fullname || "", email: storedUser.email || "" }));
 
     // Lấy giỏ hàng thực tế
-    fetch(`http://localhost:3001/cart?userId=${storedUser.id}`)
+    fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart?userId=${storedUser.id}`)
       .then(res => res.json())
       .then(data => setCartItems(data));
   }, []);
@@ -54,7 +54,7 @@ export default function CheckoutPage() {
 
     try {
       // 1. Gửi đơn hàng lên bảng orders
-      const res = await fetch("http://localhost:3001/orders", {
+      const res = await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData)
@@ -63,7 +63,7 @@ export default function CheckoutPage() {
       if (res.ok) {
         // 2. Xóa sạch giỏ hàng của user này sau khi đặt thành công
         for (const item of cartItems) {
-          await fetch(`http://localhost:3001/cart/${item.id}`, { method: "DELETE" });
+          await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${item.id}`, { method: "DELETE" });
         }
         alert("Đặt hàng thành công! SunkTea sẽ sớm liên hệ bạn.");
         router.push("/profile/orders"); // Chuyển về trang lịch sử đơn hàng

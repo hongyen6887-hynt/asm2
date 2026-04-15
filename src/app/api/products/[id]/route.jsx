@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const URL = "http://localhost:3001/products";
+const URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products";
 
 export async function PUT(req, { params }) {
   const body = await req.json();

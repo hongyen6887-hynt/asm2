@@ -5,12 +5,12 @@ export async function POST(request) {
     const item = await request.json();
     
     // Kiểm tra món đã có trong giỏ chưa
-    const checkRes = await fetch(`http://localhost:3001/cart?userId=${item.userId}&productId=${item.productId}`);
+    const checkRes = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart?userId=${item.userId}&productId=${item.productId}`);
     const existingItems = await checkRes.json();
 
     if (existingItems.length > 0) {
       // Nếu có rồi thì tăng số lượng
-      const updateRes = await fetch(`http://localhost:3001/cart/${existingItems[0].id}`, {
+      const updateRes = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${existingItems[0].id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: existingItems[0].quantity + 1 }),
@@ -18,7 +18,7 @@ export async function POST(request) {
       return NextResponse.json(await updateRes.json());
     } else {
       // Nếu chưa có thì thêm mới
-      const addRes = await fetch("http://localhost:3001/cart", {
+      const addRes = await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(item),

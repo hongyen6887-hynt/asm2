@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault();
     setError(""); // Reset lỗi mỗi lần bấm login
     try {
-      const res = await fetch(`http://localhost:3001/users?username=${username}&password=${password}`);
+      const res = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/users?username=${username}&password=${password}`);
       const user = await res.json();
 
       if (user.length > 0) {

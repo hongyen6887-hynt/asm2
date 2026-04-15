@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 async function getCategories() {
   try {
-    const res = await fetch("http://localhost:3001/categories", { next: { revalidate: 3600 } });
+    const res = await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/categories", { next: { revalidate: 3600 } });
     return res.ok ? res.json() : [];
   } catch { return []; }
 }

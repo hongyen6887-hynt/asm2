@@ -11,8 +11,8 @@ export default function AdminProducts() {
   const [editId, setEditId] = useState(null);
 
   // Cấu hình URL API (Dùng JSON Server port 3001)
-  const API_URL = "http://localhost:3001/products";
-  const CAT_URL = "http://localhost:3001/categories";
+  const API_URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products";
+  const CAT_URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/categories";
 
   useEffect(() => {
     loadData();

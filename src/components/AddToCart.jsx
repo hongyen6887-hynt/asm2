@@ -21,21 +21,21 @@ export default function AddToCart({ product }) {
     try {
       // 2. Kiểm tra xem sản phẩm này đã có trong giỏ hàng của user này chưa
       const resCheck = await fetch(
-        `http://localhost:3001/cart?userId=${user.id}&productId=${product.id}`
+        `https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart?userId=${user.id}&productId=${product.id}`
       );
       const cartItems = await resCheck.json();
 
       if (cartItems.length > 0) {
         // 3. Nếu đã có: Cập nhật số lượng (PATCH)
         const item = cartItems[0];
-        await fetch(`http://localhost:3001/cart/${item.id}`, {
+        await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${item.id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ quantity: item.quantity + 1 }),
         });
       } else {
         // 4. Nếu chưa có: Thêm mới (POST)
-        await fetch("http://localhost:3001/cart", {
+        await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

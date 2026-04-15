@@ -6,7 +6,7 @@ export default function AdminOrders() {
   const [loading, setLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null); // Để xem chi tiết đơn
 
-  const API_URL = "http://localhost:3001/orders";
+  const API_URL = "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/orders";
 
   useEffect(() => {
     fetchOrders();

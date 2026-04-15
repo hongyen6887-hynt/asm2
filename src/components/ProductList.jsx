@@ -9,7 +9,7 @@ export default function ProductsList() {
 
   // 1. Lấy tất cả sản phẩm từ JSON Server
   useEffect(() => {
-    fetch("http://localhost:3001/products")
+    fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -30,13 +30,13 @@ export default function ProductsList() {
 
     try {
       // Kiểm tra xem sản phẩm đã có trong giỏ hàng của user này chưa
-      const resCheck = await fetch(`http://localhost:3001/cart?userId=${user.id}&productId=${product.id}`);
+      const resCheck = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart?userId=${user.id}&productId=${product.id}`);
       const cartData = await resCheck.json();
 
       if (cartData.length > 0) {
         // Nếu có rồi thì tăng số lượng lên (PATCH)
         const item = cartData[0];
-        await fetch(`http://localhost:3001/cart/${item.id}`, {
+        await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart/${item.id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ quantity: item.quantity + 1 }),
@@ -51,7 +51,7 @@ export default function ProductsList() {
           image: product.image,
           quantity: 1
         };
-        await fetch("http://localhost:3001/cart", {
+        await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/cart", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(cartItem),

@@ -16,7 +16,7 @@ export default function OrderHistoryPage() {
     }
     const user = JSON.parse(userStr);
 
-    fetch(`http://localhost:3001/orders?userId=${user.id}&_sort=date&_order=desc`)
+    fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/orders?userId=${user.id}&_sort=date&_order=desc`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

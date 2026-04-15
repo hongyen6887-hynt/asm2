@@ -34,7 +34,7 @@ export default function Register() {
 
     try {
       // 1. Kiểm tra username tồn tại chưa (Sử dụng port 3001)
-      const checkRes = await fetch(`http://localhost:3001/users?username=${formData.username}`);
+      const checkRes = await fetch(`https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/users?username=${formData.username}`);
       const existingUser = await checkRes.json();
 
       if (existingUser.length > 0) {
@@ -43,7 +43,7 @@ export default function Register() {
       }
 
       // 2. Gửi dữ liệu lên JSON Server
-      const res = await fetch("http://localhost:3001/users", {
+      const res = await fetch("https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, role: "user" }),

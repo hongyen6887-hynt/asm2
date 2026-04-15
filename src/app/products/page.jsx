@@ -1,15 +1,16 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation"; // Import thêm cái này
+import { useEffect, useState, Suspense } from "react"; // Thêm Suspense
+import { useSearchParams } from "next/navigation";
 import AddToCart from "@/components/AddToCart";
+
 export const dynamic = 'force-dynamic';
 
-export default function ProductsPage() {
+// 1. Tạo một component con chứa toàn bộ logic hiện tại của bạn
+function ProductsContent() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   
-  // Lấy Category ID từ URL (ví dụ: ?category=tra-sua)
   const searchParams = useSearchParams();
   const categoryId = searchParams.get("category");
 
@@ -17,10 +18,9 @@ export default function ProductsPage() {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        // Nếu có categoryId thì gọi API kèm theo tham số lọc của json-server
         const url = categoryId 
-          ? `http://localhost:3001/products?category=${categoryId}`
-          : "http://localhost:3001/products";
+          ? `https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products?categoryId=${categoryId}` // Lưu ý: Trong db.json của bạn dùng categoryId
+          : "https://my-json-server.typicode.com/hongyen6887-hynt/sunktea-api/products";
 
         const res = await fetch(url);
         const data = await res.json();
@@ -32,9 +32,8 @@ export default function ProductsPage() {
       }
     };
     fetchProducts();
-  }, [categoryId]); // useEffect sẽ chạy lại mỗi khi categoryId trên URL thay đổi
+  }, [categoryId]);
 
-  // Logic tìm kiếm sản phẩm trên danh sách đã lọc theo Category
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -136,5 +135,14 @@ export default function ProductsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+// 2. Export component chính và bọc component con vào Suspense
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-5">Đang tải trang sản phẩm...</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }
