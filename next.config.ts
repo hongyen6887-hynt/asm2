@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  // Thay 'asm2' bằng tên repository chính xác của bạn trên GitHub
+  basePath: '/asm2', 
+  assetPrefix: '/asm2',
+  images: {
+    unoptimized: true, // Bắt buộc phải có nếu bạn dùng thẻ <Image> của Next.js khi export tĩnh
+  },
   reactCompiler: true,
 };
 

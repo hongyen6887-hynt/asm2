@@ -47,11 +47,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <ul className="dropdown-menu border-0 shadow-sm rounded-3">
                     <li><Link className="dropdown-item small" href="/products">Tất cả sản phẩm</Link></li>
                     <li><hr className="dropdown-divider" /></li>
-                    {categories.map((cat) => (
-                      <li key={cat.id}>
-                        <Link className="dropdown-item small" href={`/products?category=${cat.id}`}>{cat.name}</Link>
-                      </li>
-                    ))}
+                    {categories.map((cat: { id: string | number; name: string }) => (
+                    <li key={cat.id}>
+                      <Link className="dropdown-item small" href={`/products?category=${cat.id}`}>
+                        {cat.name}
+                      </Link>
+                    </li>
+                  ))}
                   </ul>
                 </li>
                 <li className="nav-item"><Link className="nav-link fw-bold" href="/cart">Giỏ Hàng</Link></li>
